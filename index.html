@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waste time for a score</title>
+    <style>
+        /* CSS for the leaderboard list */
+        .leaderboard {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #fff;
+            background-color: #0074D9;
+            padding: 20px;
+            border-radius: 10px;
+            width: 500px;
+            margin: 0 auto;
+        }
+        .leaderboard h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .leaderboard table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .leaderboard table th,
+        .leaderboard table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #fff;
+        }
+        .leaderboard table th {
+            background-color: #fff;
+            color: #0074D9;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .leaderboard table tr:nth-child(even) {
+            background-color: #fff;
+            color: #0074D9;
+        }
+        .leaderboard table tr:nth-child(odd) {
+            background-color: #0074D9;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="leaderboard">
+        <h2>Leaderboard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>DEMONLIKESPIE</td>
+                    <td>inf</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>J</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>B</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td></td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>T</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How to publish to go on leaderboard</title>
+    <style>
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #000;
+            box-shadow: 0px 0px 10px #000;
+            z-index: 9999;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 9998;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showPopup()">How to publish score</button>
+
+    <div class="popup" id="popup">
+        <h2>101 on publishing scores</h2>
+        <p>For now, YOU WILL NEED TO JOIN A DISCORD, V2 will get a publish tab (NO NEED FOR A SERVER IN V2) Dont lie, i can tell. https://discord.gg/qfumQhn5</p>
+        <button onclick="hidePopup()">Close</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function hidePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        div {
+            font-size: 30px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your score</h1>
+    <div id="time"></div>
+
+    <script>
+        // Set the date and time you want to count from
+        var countDownDate = new Date("Mar 19, 2023 00:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get the current date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = now - countDownDate;
+
+            // Calculate the time units
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="time"
+            document.getElementById("time").innerHTML = days + " days " + hours + " hours " 
+            + minutes + " minutes " + seconds + " seconds ";
+
+        }, 1000);
+    </script>
+</body>
+</html>
